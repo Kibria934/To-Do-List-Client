@@ -28,34 +28,23 @@ const [dataList,setDataList] = useState([]);
   return (
     <div class="card bg-base-100 lg:w-[60%] mx-auto shadow-xl">
       <h2 className="mt-10 text-center text-2xl font-bold uppercase">
-        My To Do
+        Add Your Description
       </h2>
       <div class="card-body">
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             {...register("TaskName", { required: true })}
             type="text"
-            placeholder="Task Name"
-            class="input mb-3 border-accent mr-2 w-full max-w-full"
+            placeholder="Here type your task"
+            class="input mb-3 text-xl border-accent mr-2 w-full max-w-full"
           />
           <p className="text-red-500">
-            {" "}
-            {errors.TaskName?.type === "required" && "Task name is required"}
-          </p>
-          {/* --------------description------------ */}
-          <textarea
-            {...register("description", { required: true })}
-            type="text"
-            placeholder="Type here"
-            class="textarea my-3 textarea-accent mr-2 w-full max-w-full"
-          />
-          <p className="text-red-500">
-            {errors.description && "Last name is required"}
+            {errors.TaskName?.type === "required" && "TaskName name is required"}
           </p>
           <input
             type="submit"
             className="btn btn-accent mx-auto w-full"
-            value={"Add To Do"}
+            value={"Add TaskName"}
           />
         </form>
       </div>
