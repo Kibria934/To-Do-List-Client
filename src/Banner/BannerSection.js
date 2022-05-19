@@ -13,7 +13,7 @@ const [dataList,setDataList] = useState([]);
 
   const onSubmit = (toDo) => {
       setDataList(toDo)
-    fetch("http://localhost:5000/allTodo", {
+    fetch("https://fathomless-sierra-98028.herokuapp.com/allTodo", {
       method: "POST",
       headers: {
         "content-type": "application/json",

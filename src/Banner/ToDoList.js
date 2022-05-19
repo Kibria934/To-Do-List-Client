@@ -9,7 +9,7 @@ const ToDoList = () => {
     error,
     refetch,
   } = useQuery("repoData", () =>
-    fetch("http://localhost:5000/allToDo").then((res) => res.json())
+    fetch("https://fathomless-sierra-98028.herokuapp.com/allToDo").then((res) => res.json())
   );
   if (isLoading) {
     return <p>Loading...</p>;
@@ -19,7 +19,7 @@ const ToDoList = () => {
     refetch();
   };
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/allToDo/${id}`, {
+    fetch(`https://fathomless-sierra-98028.herokuapp.com/allToDo/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -51,9 +51,6 @@ const ToDoList = () => {
               <tr>
                 <th>1</th>
                 <td
-                  style={{
-                    textDecoration: line ? "line-through" : "underline",
-                  }}
                 >
                   {t.TaskName}
                 </td>
